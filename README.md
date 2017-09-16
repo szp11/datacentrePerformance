@@ -10,7 +10,7 @@ I have found that with any computer or server crash, there were clear warning si
 + Where are the bottle necks?
 + What indications exist of failure?
 
-As I did not find anything than did meet the above requirements, I stared this project to fill this gap. 
+As I did not find anything that did meet the above requirements, I stared this project to fill this gap. 
 
 ## Objectives:
 + Only focus on the most important and valuable measurements. (There exist more than 20 000 measures on an average windows system.  This library only focus on measures with a clear use case for health or performance).
