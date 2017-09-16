@@ -2,7 +2,7 @@
 Track System Health and Performance (Errors / CPU / RAM / Memory / Disk / SQL Server) accross the organisation. This is an Open Source project under MIT License.
 
 ## Background
-During 2017 a big global organisation experienced an email outage in their Africa region that lasted 11 days.  About 3 years before the incident the IT manager’s post was made redundant.  The IT support team was left behind without a leader and escalated all their problems (mostly small ones) resulting in Management not identifying or addressing the real risks when it started to show. No one was alarmed when the backups started to fail. No one listened to the reports that the server was running out of disk space. 
+During 2017 a big global organisation experienced an email outage in one of their region's that lasted more than a week.  About 3 years before the incident the IT manager’s post was made redundant.  The IT support team was left behind without a leader and escalated all their problems (mostly small ones) resulting in Management not identifying or addressing the real risks when it started to show. No one was alarmed when the backups started to fail. No one listened to the reports that the server was running out of disk space. 
 
 I have found that with any computer or server crash, there were clear warning signs that was ignored. I started searching for possible open source solutions for the Windows platform that will show both health and performance that can be used on 10-1000+ servers. The solution need to be free and able to show both health and performance in an easy manner. I would like the solution to answer the following questions:
 + How healthy are the computers and servers in my organisation?
