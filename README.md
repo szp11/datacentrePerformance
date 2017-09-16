@@ -16,7 +16,7 @@ As I did not find anything that did meet the above requirements, I stared this p
 + Only focus on the most important and valuable measurements. (There exist more than 20 000 measures on an average windows system.  This library only focus on measures with a clear use case for health or performance).
 + Implement health and performance measures on .Net Core platform if possible. If the measure cannot be implement on .Net Core, then implement on windows platform.
 + Port the full solution to .Net Core at the earliest convenience. (Currently many performance measures are still excluded from .Net Core).
-+ Create mechanism to take measures at predefined or custom defined intervals and write results to log files.
++ Create a mechanism to take measures at predefined or custom defined intervals and write results to log files.
 + Simple display of measures on windows and console application. (Display of the measures for more than one system is currenlty out of scope for this project).
 
 ## Performance measures implemented:
