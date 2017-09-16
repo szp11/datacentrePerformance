@@ -20,7 +20,7 @@ As I did not find anything that did meet the above requirements, I stared this p
 + Simple display of measures on windows and console application. (Display of the measures for more than one system is currenlty out of scope for this project).
 
 ## Performance measures implemented:
-Here is a list of the measures that are available and the reasons why they are important. If a measure can be implemented on .Net Core it will be done in the LamedalCore library and reused here. 
+Here is a list of the measures that are available and the reasons why they are important. If a measure can be implemented on .Net Core it will be done in the [LamedalCore library](https://github.com/perezLamed/LamedalCore) and reused here. 
 
 **CPU:**
 +  CPU performance.
