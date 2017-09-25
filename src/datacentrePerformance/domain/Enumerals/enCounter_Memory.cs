@@ -10,6 +10,7 @@ namespace datacentrePerformance.domain.Enumerals
             Value_Unit = "MB", 
             Format_IsMultiplier = false, 
             Format_Multiplier = 1024 * 1024, 
+            Format_DecimalPlaces = 2,
             Help = "This measure show the memory used by the active process. It can be used to track internal operations that use lots of memory.")
         ]
         activeProcessMemory,

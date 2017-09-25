@@ -35,8 +35,9 @@ namespace datacentrePerformance.Test
             var letters = _lamed.lib.IO.Drive.Letters();
             foreach (string drive in letters)
             {
+                _Debug.WriteLine("  "+drive);
                 foreach (var enum1 in _lamed.Types.Enum.Enumvalues<enCounter_IO>()) _Debug.WriteLine("  " + SystemMeasurement.IO(enum1, drive));  // Disk
-                _Debug.WriteLine("  -------------------");
+                _Debug.WriteLine("  ------------------------");
             }
         }
 
@@ -73,8 +74,8 @@ namespace datacentrePerformance.Test
 
             // activeProcessMemory
             var activeProcessMemory = SystemMeasurement.Memory(enCounter_Memory.activeProcessMemory);
-            _Debug.WriteLine($"  {activeProcessMemory}");
             Assert.True(activeProcessMemory.Value_ > 0);
+            _Debug.WriteLine($"  {activeProcessMemory}");
             _Debug.WriteLine("-----------------------------");
             _Debug.WriteLine("  " + SystemMeasurement.Memory(enCounter_Memory.PhysicalMemory_Total).ToString());
             _Debug.WriteLine("  " + SystemMeasurement.Memory(enCounter_Memory.PhysicalMemory_Available).ToString());
@@ -106,11 +107,11 @@ namespace datacentrePerformance.Test
         [Fact]
         public void IO_Test()
         {
-            //// Speed
-            //_Debug.WriteLine("Drive Speed:");
-            //_Debug.WriteLine("  " + SystemMeasurement.IO(enCounter_IO.Speed));
-            //_Debug.WriteLine("Method2:");
-            //_Debug.WriteLine($"  Drive c: {_lamed.lib.IO.Drive.Drive_Speed(ShowProgress).zToStr()}MB/sec");
+            // Speed
+            _Debug.WriteLine("Drive Speed:");
+            _Debug.WriteLine("  " + SystemMeasurement.IO(enCounter_IO.Speed));
+            _Debug.WriteLine("Method2:");
+            _Debug.WriteLine($"  Drive c: {_lamed.lib.IO.Drive.Drive_Speed(ShowProgress).zToStr()}MB/sec");
 
             // Disk
             _Debug.WriteLine("  " + SystemMeasurement.IO(enCounter_IO.Total_Transer));
@@ -119,7 +120,6 @@ namespace datacentrePerformance.Test
             System.Threading.Thread.Sleep(100);
             _Debug.WriteLine($"Disk Transfer:{diskAvgSecRead.NextValue()}");
             _Debug.WriteLine("  " + SystemMeasurement.IO(enCounter_IO.Total_Transer));
-
         }
 
         [Fact]
@@ -141,6 +141,7 @@ namespace datacentrePerformance.Test
         {
             _Debug.WriteLine("  "+message + $" ({progress}%)");
         }
+
         [Fact]
         public void IO_Disk_Test()
         { 
@@ -226,9 +227,9 @@ namespace datacentrePerformance.Test
         {
             List<string> counterlines;
 
-            //SystemMeasurement.Info_Couters("Memory", false);
-            List<PerformanceCounter> counters = SystemMeasurement.Info_Couters("Paging File");
-            Assert.Equal(4, counters.Count);
+            ////SystemMeasurement.Info_Couters("Memory", false);
+            //List<PerformanceCounter> counters = SystemMeasurement.Info_Couters("Paging File");
+            //Assert.Equal(4, counters.Count);
 
             //_Debug.WriteLine("Paging File:");
             //_Debug.WriteLine("==============");
@@ -240,13 +241,17 @@ namespace datacentrePerformance.Test
             //SystemMeasurement.Info_Couters(out counterlines, "Memory");
             //_Debug.WriteLine(counterlines.zTo_Str("".NL()));
 
-            _Debug.WriteLine("PhysicalDisk:");
+            //_Debug.WriteLine("PhysicalDisk:");
+            //_Debug.WriteLine("==============");
+            //SystemMeasurement.Info_Couters(out counterlines, "PhysicalDisk", false, false);
+            //_Debug.WriteLine(counterlines.zTo_Str("".NL()));
+
+            // "Processor"
+            _Debug.WriteLine("Processor:");
             _Debug.WriteLine("==============");
-            SystemMeasurement.Info_Couters(out counterlines, "PhysicalDisk", false, false);
+            SystemMeasurement.Info_Couters(out counterlines, "Processor", false, false);
             _Debug.WriteLine(counterlines.zTo_Str("".NL()));
         }
-
-        
 
         [Fact]
         public void Eventlog_Test()
@@ -275,6 +280,35 @@ namespace datacentrePerformance.Test
                 _Debug.WriteLine($"  Error Source: {logEntry.Source}");
 
             }
+        }
+
+        [Fact]
+        public void CPU_Test()
+        {
+            //cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+            //cpuPrivilegedTime = new PerformanceCounter("Processor", "% Privileged Time", "_Total");
+            //cpuInterruptTime = new PerformanceCounter("Processor", "% Interrupt Time", "_Total");
+            //cpuDPCTime = new PerformanceCounter("Processor", "% DPC Time", "_Total");
+            /*
+Processor:
+==============
+  ("Processor", "% Processor Time","_Total,") = 0
+  ("Processor", "% User Time","_Total,") = 0
+  ("Processor", "% Privileged Time","_Total,") = 0
+
+  ("Processor", "Interrupts/sec","_Total,") = 47662.81
+  ("Processor", "% DPC Time","_Total,") = 0
+  ("Processor", "% Interrupt Time","_Total,") = 0
+  ("Processor", "DPCs Queued/sec","_Total,") = 21242.97
+  ("Processor", "DPC Rate","_Total,") = 135
+  ("Processor", "% Idle Time","_Total,") = 0
+  ("Processor", "% C1 Time","_Total,") = 0
+  ("Processor", "% C2 Time","_Total,") = 3.89817
+  ("Processor", "% C3 Time","_Total,") = 0
+  ("Processor", "C1 Transitions/sec","_Total,") = 20929.42
+  ("Processor", "C2 Transitions/sec","_Total,") = 0
+  ("Processor", "C3 Transitions/sec","_Total,") = 0              
+            */
         }
     }
 }

@@ -29,6 +29,19 @@ namespace datacentrePerformance.domain.Attributes
         public int Format_NextValueSleep = 100;  // Sleep in milliseconds between values
         public bool Format_IsMultiplier = true;  // If true then multiply else devide
 
+        // Alarm values
+        // Safe region
+        public float Alarm_SafeMin = -1;
+        public float Alarm_SafeMax = -1;
+
+        // Warning region
+        public float Alarm_WarningMin = -1;
+        public float Alarm_WarningMax = -1;
+
+        // Error region
+        public float Alarm_ErrorMin = -1;
+        public float Alarm_ErrorMax = -1;
+
         /// <summary>
         /// Defines a PerformanceCounter for a enumerable value.
         /// </summary>

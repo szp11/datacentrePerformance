@@ -215,8 +215,8 @@ namespace datacentrePerformance
                                 if (showHelp)
                                 {
                                     counterLines.Add(line2);
+                                    counterLines.Add(line3);
                                 }
-                                counterLines.Add(line3);
                             }
                         }
                         catch (Exception) { }

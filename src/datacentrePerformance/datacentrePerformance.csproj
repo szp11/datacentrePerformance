@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="domain\Attributes\enumPerformanceMeasureAttribute.cs" />
+    <Compile Include="domain\Enumerals\enCounter_CPU.cs" />
     <Compile Include="domain\Enumerals\enCounter_IO.cs" />
     <Compile Include="domain\Enumerals\enCounter_Memory.cs" />
     <Compile Include="SystemMeasurement.cs" />

@@ -9,7 +9,7 @@ namespace datacentrePerformance.domain.Enumerals
             Name_Counter = "Disk Reads/sec",
             Name_Instance = "_Total",
             Name_Caption = "Total reads per second", 
-            Value_Unit = "MB/sec",
+            Value_Unit = "Requests/sec",
             Format_NextValue2Use = 2)]
         Total_Read,
 
@@ -18,7 +18,7 @@ namespace datacentrePerformance.domain.Enumerals
         Name_Counter = "Disk Writes/sec",
         Name_Instance = "_Total",
         Name_Caption = "Total writes per second",
-        Value_Unit = "MB/sec",
+        Value_Unit = "Requests/sec",
         Format_NextValue2Use = 2)]
         Total_Write,
 
@@ -27,7 +27,7 @@ namespace datacentrePerformance.domain.Enumerals
             Name_Counter = "Disk Transfers/sec",
             Name_Instance = "_Total",
             Name_Caption = "Total transfer per second",
-            Value_Unit = "MB/sec",
+            Value_Unit = "Requests/sec",
             Format_NextValue2Use = 2,
             Format_NextValueSleep = 500)]
         Total_Transer,
@@ -36,9 +36,11 @@ namespace datacentrePerformance.domain.Enumerals
             Name_Category = "PhysicalDisk",
             Name_Counter = "% Disk Time",
             Name_Instance = "_Total",
-            Name_Caption = "Total disk time",
+            Name_Caption = "Total % disk time",
             Value_Unit = "%",
-            Format_NextValue2Use = 2)]
+            Format_NextValue2Use = 2,
+            Alarm_ErrorMin = 51,
+            Alarm_ErrorMax = 100)]
         Total_DiskTimePercent,
 
         [enumPerformanceMeasure(
@@ -76,6 +78,10 @@ namespace datacentrePerformance.domain.Enumerals
             //Name_Instance = "c:\\",
             Name_Caption = "% free disk space for '{0}'",
             Value_Unit = "%",
+            Alarm_WarningMax = 20,
+            Alarm_SafeMin = 11,
+            Alarm_ErrorMax = 10,
+            Alarm_ErrorMin = 0,
             Help = "This measure show the % of space that is available for a specific disk.")]
         Space_FreePercent,
 
