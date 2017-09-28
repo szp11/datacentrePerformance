@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LamedalCore_Templates, Version=0.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\Lamedal_WinForms\packages\LamedalCore_Templates.0.0.5\lib\net461\LamedalCore_Templates.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NewFeatures_Test.cs" />
     <Compile Include="SystemMeasurement_Test.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +72,10 @@
     <ProjectReference Include="..\..\LamedalCore\src\LamedalCore.csproj">
       <Project>{421feb9f-b016-45bd-98be-9b4889f39057}</Project>
       <Name>LamedalCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LamedalCore_Templates\src\LamedalCore_Templates.csproj">
+      <Project>{789d96bd-c79c-4277-a88d-6b59dc1ce7d6}</Project>
+      <Name>LamedalCore_Templates</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Lamedal_WinForms\src\Lamedal_UIWinForms.csproj">
       <Project>{6ee128e4-96f6-40d4-85c0-235c30ec461c}</Project>

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamedalCore.Test", "..\Lame
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "datacentrePerformance.Test", "tests\datacentrePerformance.Test.csproj", "{0E838B00-E65F-4A74-A9AA-F01B945D5821}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LamedalCore_Templates", "..\LamedalCore_Templates\src\LamedalCore_Templates.csproj", "{789D96BD-C79C-4277-A88D-6B59DC1CE7D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0E838B00-E65F-4A74-A9AA-F01B945D5821}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E838B00-E65F-4A74-A9AA-F01B945D5821}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E838B00-E65F-4A74-A9AA-F01B945D5821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789D96BD-C79C-4277-A88D-6B59DC1CE7D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789D96BD-C79C-4277-A88D-6B59DC1CE7D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789D96BD-C79C-4277-A88D-6B59DC1CE7D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789D96BD-C79C-4277-A88D-6B59DC1CE7D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
