@@ -49,7 +49,7 @@
       <HintPath>..\packages\JetBrains.Annotations.10.4.0\lib\net\JetBrains.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="LamedalCore, Version=1.1.4.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\LamedalCore.2.0.0\lib\net461\LamedalCore.dll</HintPath>
+      <HintPath>..\..\Lamedal_WinForms\packages\LamedalCore.2.0.1\lib\net461\LamedalCore.dll</HintPath>
     </Reference>
     <Reference Include="LamedalCore_Templates, Version=0.0.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LamedalCore_Templates.0.0.6\lib\net461\LamedalCore_Templates.dll</HintPath>
@@ -91,7 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NewFeatures\NewFeatures_Test.cs" />
+    <Compile Include="NewFeatures\NewFeatures_pcCreateDate.cs" />
     <Compile Include="SystemMeasurement_Test.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

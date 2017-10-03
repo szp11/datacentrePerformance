@@ -10,11 +10,11 @@ using Xunit.Abstractions;
 
 namespace datacentrePerformance.Test.NewFeatures
 {
-    public class NewFeatures_Test : pcTest
+    public class NewFeatures_pcCreateDate : pcTest
     {
         private readonly LamedalCore_ _lamed = LamedalCore_.Instance;
 
-        public NewFeatures_Test(ITestOutputHelper debug = null) : base(debug) { }
+        public NewFeatures_pcCreateDate(ITestOutputHelper debug = null) : base(debug) { }
 
         [Fact]
         public void Manufacturer_Test()
