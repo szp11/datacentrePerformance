@@ -81,16 +81,16 @@ namespace datacentrePerformance.Test.NewFeatures
         [Fact]
         public void OperatingSystem_Test()
         {
-            _Debug.WriteLine($"Process memory: {_lamed.lib.System.activeProcessMemory()}");
-            _Debug.WriteLine($"OS Platform: {_lamed.lib.System.OS_Platform()}");
-            _Debug.WriteLine($"OS Version: {_lamed.lib.System.OS_Version()}");
+            _Debug.WriteLine($"Process memory: {_lamed.lib.System.Runtime.activeProcessMemory()}");
+            _Debug.WriteLine($"OS Platform: {_lamed.lib.System.Runtime.OS_Platform()}");
+            _Debug.WriteLine($"OS Version: {_lamed.lib.System.Runtime.OS_Version()}");
             _Debug.WriteLine($"-----------------------------------");
-            _Debug.WriteLine($"{_lamed.lib.System.OS_InfoAsStr()}");
+            _Debug.WriteLine($"{_lamed.lib.System.Runtime.OS_InfoAsStr()}");
             _Debug.WriteLine($"-----------------------------------");
-            _Debug.WriteLine($"{_lamed.lib.System.OS_InfoAsStr(false)}");
+            _Debug.WriteLine($"{_lamed.lib.System.Runtime.OS_InfoAsStr(false)}");
 
-            DataTable table1 = OS_InfoAsTable(_lamed.lib.System.OS_InfoAsStr());
-            DataTable table2 = OS_InfoAsTable(_lamed.lib.System.OS_InfoAsStr(false));
+            DataTable table1 = OS_InfoAsTable(_lamed.lib.System.Runtime.OS_InfoAsStr());
+            DataTable table2 = OS_InfoAsTable(_lamed.lib.System.Runtime.OS_InfoAsStr(false));
             Assert.Equal(table1, table2);
             Assert.True(table1.Rows.Count > 0);
         }
