@@ -185,19 +185,18 @@ namespace datacentrePerformance.Test
             Assert.True(_lamed.lib.IO.Drive.Space_Total(driveName) > _lamed.lib.IO.Drive.Space_Free(driveName));
             long persent = _lamed.lib.IO.Drive.Space_FreePercent(driveName);
             Assert.True(persent > 10, $"Error! There is only {persent}% space left on drive.");
-            _Debug.WriteLine($"Total disk space: {_lamed.lib.IO.Drive.Space_Total(driveName)}GB.");
-            _Debug.WriteLine($"Free disk space: {_lamed.lib.IO.Drive.Space_Free(driveName)}GB.");
+            _Debug.WriteLine($"Total disk space: {_lamed.lib.IO.Drive.Space_Total(driveName, enComputerSizeType.GigaBytes)}GB.");
+            _Debug.WriteLine($"Free disk space: {_lamed.lib.IO.Drive.Space_Free(driveName, enComputerSizeType.GigaBytes)}GB.");
             _Debug.WriteLine($"Free space: {persent}%");
 
             // Todo - search for removable too //  & enIO_DriveType.CDRom
-            var letters = _lamed.lib.IO.Drive.Letters();
             if (Environment.MachineName == "LAMEDALPC")
             {
-                if (letters.Length == 1)
+                var externalDiskInserted = false;
+                var letters = _lamed.lib.IO.Drive.Letters();
+                if (externalDiskInserted == false)
                 {
-                    Assert.True(_lamed.lib.IO.Drive.IsWritable("c:\\"));
-                } else if (letters.Length == 2)
-                {
+                    Assert.True(letters.Length == 2);
                     Assert.True(_lamed.lib.IO.Drive.IsWritable("c:\\"));
                     Assert.False(_lamed.lib.IO.Drive.IsWritable("d:\\")); // CD drive
                 }
@@ -206,11 +205,12 @@ namespace datacentrePerformance.Test
                     Assert.Equal(3, letters.Length);
                     Assert.True(_lamed.lib.IO.Drive.IsWritable("c:\\"));
                     Assert.True(_lamed.lib.IO.Drive.IsWritable("e:\\"));
-                    Assert.False(_lamed.lib.IO.Drive.IsWritable("d:\\"));  // CD drive
+                    Assert.False(_lamed.lib.IO.Drive.IsWritable("d:\\")); // CD drive
                 }
             }
             else
             {
+                var letters = _lamed.lib.IO.Drive.Letters();
                 _Debug.WriteLine($"PCName:{Environment.MachineName}");
                 Assert.Equal(7, letters.Length);
             }
