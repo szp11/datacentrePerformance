@@ -1,0 +1,30 @@
+﻿@model ChartJsTest2.Views.Chart.LineChartModel
+@{
+    ViewData["Title"] = "Line Chart";
+}
+
+<h1>Chart Test Page</h1>
+<div><canvas id="lineChart"></canvas></div>
+
+@{ChartJSCore.Models.Chart chart = (ChartJSCore.Models.Chart)ViewData["chart"]; }
+
+@section Scripts {
+    <script src="~/lib/Chart.js/dist/Chart.js"></script>
+    <script>
+        @Html.Raw(chart.CreateChartCode("lineChart"))
+
+        setInterval(function () {
+            // Get chart data
+            $.get("ChartData", function (data) {
+                lineChart.data.datasets[0].data = data;
+            })
+
+            $.get("ChartLabels", function (labels) {
+                lineChart.data.labels = labels;
+            })
+
+            lineChart.update();
+        }, 2000);
+    </script>
+}
+

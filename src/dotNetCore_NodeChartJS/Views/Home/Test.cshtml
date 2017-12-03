@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Test Chart page";
+}
+
+<div><canvas id="lineChart"></canvas></div>
+
+@{ChartJSCore.Models.Chart chart = (ChartJSCore.Models.Chart)ViewData["chart"]; }
+
+@section Scripts {
+    <script src="~/lib/Chart.js/dist/Chart.js"></script>
+    <script>
+        @Html.Raw(chart.CreateChartCode("lineChart"));
+    </script>
+}

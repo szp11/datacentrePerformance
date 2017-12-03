@@ -1,0 +1,9 @@
+
+rem npm install node-uuid
+rem npm install tough-cookie
+rem npm install phantomjs
+rem npm install html-pdf
+
+rem npm install -g node-pre-gyp
+npm install -g v8-debug
+npm install -g node-inspector
