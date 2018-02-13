@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamedalCore.Test", "..\Lame
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lamedal", "Lamedal", "{BDD51100-B9F0-44AD-8EB1-AFA8CB3D5304}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamedalExcel", "..\Lamedal_Excel\src\LamedalExcel\LamedalExcel.csproj", "{34439F5A-D35F-4E70-AB60-A99BC6C12E59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,14 @@ Global
 		{66311AA8-6427-4B6A-840A-0E8C6D0A2B05}.Release|Any CPU.Build.0 = Release|Any CPU
 		{66311AA8-6427-4B6A-840A-0E8C6D0A2B05}.Release|x86.ActiveCfg = Release|Any CPU
 		{66311AA8-6427-4B6A-840A-0E8C6D0A2B05}.Release|x86.Build.0 = Release|Any CPU
+		{34439F5A-D35F-4E70-AB60-A99BC6C12E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34439F5A-D35F-4E70-AB60-A99BC6C12E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34439F5A-D35F-4E70-AB60-A99BC6C12E59}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{34439F5A-D35F-4E70-AB60-A99BC6C12E59}.Debug|x86.Build.0 = Debug|Any CPU
+		{34439F5A-D35F-4E70-AB60-A99BC6C12E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34439F5A-D35F-4E70-AB60-A99BC6C12E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34439F5A-D35F-4E70-AB60-A99BC6C12E59}.Release|x86.ActiveCfg = Release|Any CPU
+		{34439F5A-D35F-4E70-AB60-A99BC6C12E59}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +92,7 @@ Global
 		{C5B02C31-0A43-4CBF-BA58-7C6CF0CE9A3E} = {BDD51100-B9F0-44AD-8EB1-AFA8CB3D5304}
 		{BD2F0332-5C87-473C-9B70-C58C5E5FC326} = {BDD51100-B9F0-44AD-8EB1-AFA8CB3D5304}
 		{66311AA8-6427-4B6A-840A-0E8C6D0A2B05} = {BDD51100-B9F0-44AD-8EB1-AFA8CB3D5304}
+		{34439F5A-D35F-4E70-AB60-A99BC6C12E59} = {BDD51100-B9F0-44AD-8EB1-AFA8CB3D5304}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E3769946-3B9C-4BA1-8130-C58AF29109BD}

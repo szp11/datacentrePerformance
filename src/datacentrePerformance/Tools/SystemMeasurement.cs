@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using datacentrePerformance.domain.Attributes;
 using datacentrePerformance.domain.Enumerals;
 using JetBrains.Annotations;
@@ -13,7 +11,7 @@ using LamedalCore.domain.Attributes;
 using LamedalCore.domain.Enumerals;
 using LamedalCore.zz;
 
-namespace datacentrePerformance
+namespace datacentrePerformance.Tools
 {
     [BlueprintRule_Class(enBlueprint_ClassNetworkType.Node_Action)]
     public static class SystemMeasurement

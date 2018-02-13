@@ -4,13 +4,13 @@ using System.Diagnostics;
 using System.Linq;
 using datacentrePerformance.domain.Attributes;
 using datacentrePerformance.domain.Enumerals;
+using datacentrePerformance.Test.NewFeatures;
+using datacentrePerformance.Tools;
 using LamedalCore;
 using LamedalCore.domain.Attributes;
 using LamedalCore.domain.Enumerals;
 using LamedalCore.zPublicClass.Test;
 using LamedalCore.zz;
-using Lamedal_UIWinForms;
-using Lamedal_UIWinForms.domain.Enumerals;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -19,8 +19,6 @@ namespace datacentrePerformance.Test
     public partial class SystemMeasurement_Test : pcTest
     {
         private readonly LamedalCore_ _lamed = LamedalCore_.Instance; // system library
-        private readonly Lamedal_WinForms _lamedWin = Lamedal_WinForms.Instance;  // Load the winforms lib
-
         public SystemMeasurement_Test(ITestOutputHelper debug = null) : base(debug){}
 
         [Fact]
@@ -31,7 +29,7 @@ namespace datacentrePerformance.Test
             _Debug.WriteLine("Memory:");
             foreach (var enum1 in _lamed.Types.Enum.Enumvalues<enCounter_Memory>()) _Debug.WriteLine("  " + SystemMeasurement.Memory(enum1));  // Memory
             _Debug.WriteLine("IO:");
-            var letters = _lamed.lib.IO.Drive.Letters();
+            var letters = _lamed.lib.IO.Drive.Letters(enIO_DriveType.Writeable);
             foreach (string drive in letters)
             {
                 _Debug.WriteLine("  "+drive);
@@ -191,7 +189,7 @@ namespace datacentrePerformance.Test
             // Todo - search for removable too //  & enIO_DriveType.CDRom
             if (Environment.MachineName == "LAMEDALPC")
             {
-                var externalDiskInserted = false;
+                var externalDiskInserted = true;
                 var letters = _lamed.lib.IO.Drive.Letters();
                 if (externalDiskInserted == false)
                 {
@@ -260,11 +258,11 @@ namespace datacentrePerformance.Test
         public void Eventlog_Test()
         {
 
-            var logAll = _lamedWin.lib.System.EventLog(filterLog:false);
-            var logSystem = _lamedWin.lib.System.EventLog(logName:enEventLog.system);
-            var logSystemToday = _lamedWin.lib.System.EventLog(logName: enEventLog.system, today: true);
-            var logApplication = _lamedWin.lib.System.EventLog(logName:enEventLog.application);
-            var logApplicationToday = _lamedWin.lib.System.EventLog(logName:enEventLog.application, today:true);
+            var logAll = NewFeature_EventLog.EventLog(filterLog:false);
+            var logSystem = NewFeature_EventLog.EventLog(logName:enEventLog.system);
+            var logSystemToday = NewFeature_EventLog.EventLog(logName: enEventLog.system, today: true);
+            var logApplication = NewFeature_EventLog.EventLog(logName:enEventLog.application);
+            var logApplicationToday = NewFeature_EventLog.EventLog(logName:enEventLog.application, today:true);
 
             _Debug.WriteLine($"All Errors: {logAll.Count}");
             _Debug.WriteLine($"System Errors: {logSystem.Count}");

@@ -1,8 +1,6 @@
-﻿using JetBrains.Annotations;
-using LamedalCore.domain.Attributes;
-using Microsoft.VisualBasic.Devices;
+﻿using Microsoft.VisualBasic.Devices;
 
-namespace datacentrePerformance
+namespace datacentrePerformance.Tools
 {
     internal static class VisualBasicMethods
     {

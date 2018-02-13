@@ -16,12 +16,8 @@ namespace datacentrePerformance.Test.NewFeatures
         public NewFeature_InstalledApplications(ITestOutputHelper debug = null) : base(debug) { }
 
         [Fact]
-        public void PC_andUserName()
+        public void Windows_Groups_Test()
         {
-            _Debug.WriteLine(Environment.MachineName);
-            _Debug.WriteLine(Environment.UserName);
-            _Debug.WriteLine(Environment.OSVersion.ToString());
-
             var id = WindowsIdentity.GetCurrent();
             _Debug.WriteLine(id.Name);
             _Debug.WriteLine("Groups:");
@@ -31,20 +27,30 @@ namespace datacentrePerformance.Test.NewFeatures
             }
         }
 
-        [Fact]
-        public void FindInstalledApplications()
+        public string FindInstalledApplications(out string header, out int count, out int total)
         {
+            header = "Application, EstimatedSize, Publisher, InstallLocation";
+            var result = "";
             var pcName = Environment.MachineName;
             var keyAddress1 = @"SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION\Uninstall";
             var keyAddress2 = @"SOFTWARE\MICROSOFT\WINDOWS\CURRENTVERSION";
             RegistryKey reg32 = RegistryKey.OpenRemoteBaseKey(RegistryHive.LocalMachine, pcName, RegistryView.Registry32);
-            RegistryKey reg64 = RegistryKey.OpenRemoteBaseKey(RegistryHive.LocalMachine, pcName, RegistryView.Registry64);
+            RegistryKey Reg64 = RegistryKey.OpenRemoteBaseKey(RegistryHive.LocalMachine, pcName, RegistryView.Registry64);
 
             RegistryKey key32 = reg32.OpenSubKey(keyAddress1);
-            //var key64 = Reg64.OpenSubKey(key1);
+            var key64 = Reg64.OpenSubKey(keyAddress1);
 
-            int ii = 0;
-            int total = 0;
+            count = 0;
+            total = 0;
+            result += Application_GetValue(key32, ref count, ref total);
+            result += Application_GetValue(key64, ref count, ref total);
+
+            return result;
+        }
+
+        private static string Application_GetValue(RegistryKey key32, ref int count, ref int total)
+        {
+            string result = "";
             foreach (string keyName in key32.GetSubKeyNames())
             {
                 var subKey = key32.OpenSubKey(keyName);
@@ -54,15 +60,27 @@ namespace datacentrePerformance.Test.NewFeatures
                     if (value != null)
                     {
                         var size = subKey.GetValue("EstimatedSize").zObject().AsInt();
-                        _Debug.WriteLine(value + " -> " + size / 1024 + "MB");
-                        ii++;
+                        var publisher = "" + subKey.GetValue("Publisher");
+                        var installLocation = "" + subKey.GetValue("InstallLocation");
+                        result += value + "," + size / 1024 + "MB," + publisher + "," + installLocation.NL();
+                        count++;
                         total = total + size;
                     }
                 }
             }
-            _Debug.WriteLine("-------------------------------");
-            _Debug.WriteLine("Total Applications: " + ii);
-            _Debug.WriteLine("Total size: " + total/1024+"MB");
+
+            return result;
+        }
+
+        [Fact]
+        public void FindInstalledApplications_Test()
+        {
+            var apps = FindInstalledApplications(out var header, out var count, out var total);
+            _Debug.WriteLine("Total Applications: " + count);
+            _Debug.WriteLine("Total size: " + total / 1024 /1024 + "Gig");
+            _Debug.WriteLine("--------------------------------------------------------------------");
+            _Debug.WriteLine(header);
+            _Debug.WriteLine(apps);
         }
     }
 }

@@ -3,6 +3,7 @@
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0E838B00-E65F-4A74-A9AA-F01B945D5821}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -14,6 +15,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -24,6 +26,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -33,9 +36,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
-      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
-    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -85,7 +85,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NewFeatures\enEventLog.cs" />
     <Compile Include="NewFeatures\NewFeatures_pcCreateDate.cs" />
+    <Compile Include="NewFeatures\NewFeature_EventLog.cs" />
     <Compile Include="NewFeatures\NewFeature_InstalledApplications.cs" />
     <Compile Include="SystemMeasurement_Test.cs" />
     <Compile Include="Program.cs" />
@@ -101,7 +103,7 @@
       <Name>LamedalCore</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Lamedal_WinForms\src\Lamedal_UIWinForms.csproj">
-      <Project>{6ee128e4-96f6-40d4-85c0-235c30ec461c}</Project>
+      <Project>{1f34ff50-61f1-483e-a80c-2b23b5320a84}</Project>
       <Name>Lamedal_UIWinForms</Name>
     </ProjectReference>
     <ProjectReference Include="..\src\datacentrePerformance\datacentrePerformance.csproj">
