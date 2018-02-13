@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using datacentrePerformance.domain.Attributes;
 using datacentrePerformance.domain.Enumerals;
 using datacentrePerformance.Test.NewFeatures;
@@ -14,7 +13,7 @@ using LamedalCore.zz;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace datacentrePerformance.Test
+namespace datacentrePerformance.Test.Tests
 {
     public partial class SystemMeasurement_Test : pcTest
     {

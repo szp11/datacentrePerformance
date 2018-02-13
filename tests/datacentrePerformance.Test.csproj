@@ -86,12 +86,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NewFeatures\enEventLog.cs" />
-    <Compile Include="NewFeatures\NewFeatures_pcCreateDate.cs" />
     <Compile Include="NewFeatures\NewFeature_EventLog.cs" />
     <Compile Include="NewFeatures\NewFeature_InstalledApplications.cs" />
-    <Compile Include="SystemMeasurement_Test.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\SystemMeasurement_Test.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +100,10 @@
     <ProjectReference Include="..\..\LamedalCore\src\LamedalCore.csproj">
       <Project>{bd2f0332-5c87-473c-9b70-c58c5e5fc326}</Project>
       <Name>LamedalCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LamedalWindows\src\LamedalWindows\LamedalWindows.csproj">
+      <Project>{CB180BB3-B302-4DFB-87FB-98E8E6F49F28}</Project>
+      <Name>LamedalWindows</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Lamedal_WinForms\src\Lamedal_UIWinForms.csproj">
       <Project>{1f34ff50-61f1-483e-a80c-2b23b5320a84}</Project>
