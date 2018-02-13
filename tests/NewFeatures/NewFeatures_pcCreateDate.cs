@@ -47,7 +47,7 @@ namespace datacentrePerformance.Test.NewFeatures
                 _Debug.WriteLine("Bios: {0}", bios1["Version"].ToString());
                 //string[] BIOSVersions = (string[])bios1["BIOSVersion"];
                 string dateStr = bios1["ReleaseDate"].ToString();   // 20161019000000.000000+000
-                dateStr = dateStr.zvar_Id(".");  // 20161019000000
+                dateStr = ".".zVar_Id(dateStr);  // 20161019000000
                 string formatString = "yyyyMMddHHmmss";
                 DateTime dt = DateTime.ParseExact(dateStr, formatString, null);
                 _Debug.WriteLine("InstallDate: {0}".zFormat(dt));

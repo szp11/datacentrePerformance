@@ -33,7 +33,7 @@ namespace datacentrePerformance
 
             switch (performance.Id)
             {
-                case enCounter_Memory.activeProcessMemory: performance.Value_ = _lamed.lib.System.activeProcessMemory(); break;
+                case enCounter_Memory.activeProcessMemory: performance.Value_ = _lamed.lib.System.Runtime.activeProcessMemory(); break;
                 case enCounter_Memory.PhysicalMemory_Available: performance.Value_ = VisualBasicMethods.Memory_PhysicalAvailable(); break;
                 case enCounter_Memory.PhysicalMemory_Total: performance.Value_ = VisualBasicMethods.Memory_PhysicalTotal(); break;
                 case enCounter_Memory.PhysicalMemory_InUse: performance.Value_ = VisualBasicMethods.Memory_PhysicalInUse(); break;

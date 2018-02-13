@@ -9,7 +9,6 @@ using LamedalCore.domain.Attributes;
 using LamedalCore.domain.Enumerals;
 using LamedalCore.zPublicClass.Test;
 using LamedalCore.zz;
-using LamedalCore_Templates;
 using Lamedal_UIWinForms;
 using Lamedal_UIWinForms.domain.Enumerals;
 using Xunit;
