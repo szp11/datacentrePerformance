@@ -19,9 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lamedal", "Lamedal", "{BDD5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamedalExcel", "..\Lamedal_Excel\src\LamedalExcel\LamedalExcel.csproj", "{34439F5A-D35F-4E70-AB60-A99BC6C12E59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamedalWindows", "..\LamedalWindows\src\LamedalWindows\LamedalWindows.csproj", "{CB180BB3-B302-4DFB-87FB-98E8E6F49F28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LamedalWindows", "..\LamedalWindows\src\LamedalWindows\LamedalWindows.csproj", "{CB180BB3-B302-4DFB-87FB-98E8E6F49F28}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamedalWindows.Tests", "..\LamedalWindows\tests\LamedalWindows.Tests\LamedalWindows.Tests.csproj", "{B04AFF21-13AF-46BD-A1AA-E1BC969EF288}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LamedalCore_Templates", "..\LamedalCore_Templates\src\LamedalCore_Templates.csproj", "{10095043-B0B2-4550-A617-A216940AA533}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamedalCore_Templates.Test", "..\LamedalCore_Templates\tests\LamedalCore_Templates.Test.csproj", "{D1B9A0A7-F423-451E-9DBE-1772D36DC3B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +107,22 @@ Global
 		{B04AFF21-13AF-46BD-A1AA-E1BC969EF288}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B04AFF21-13AF-46BD-A1AA-E1BC969EF288}.Release|x86.ActiveCfg = Release|Any CPU
 		{B04AFF21-13AF-46BD-A1AA-E1BC969EF288}.Release|x86.Build.0 = Release|Any CPU
+		{10095043-B0B2-4550-A617-A216940AA533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10095043-B0B2-4550-A617-A216940AA533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10095043-B0B2-4550-A617-A216940AA533}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{10095043-B0B2-4550-A617-A216940AA533}.Debug|x86.Build.0 = Debug|Any CPU
+		{10095043-B0B2-4550-A617-A216940AA533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10095043-B0B2-4550-A617-A216940AA533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10095043-B0B2-4550-A617-A216940AA533}.Release|x86.ActiveCfg = Release|Any CPU
+		{10095043-B0B2-4550-A617-A216940AA533}.Release|x86.Build.0 = Release|Any CPU
+		{D1B9A0A7-F423-451E-9DBE-1772D36DC3B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1B9A0A7-F423-451E-9DBE-1772D36DC3B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1B9A0A7-F423-451E-9DBE-1772D36DC3B9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D1B9A0A7-F423-451E-9DBE-1772D36DC3B9}.Debug|x86.Build.0 = Debug|Any CPU
+		{D1B9A0A7-F423-451E-9DBE-1772D36DC3B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1B9A0A7-F423-451E-9DBE-1772D36DC3B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1B9A0A7-F423-451E-9DBE-1772D36DC3B9}.Release|x86.ActiveCfg = Release|Any CPU
+		{D1B9A0A7-F423-451E-9DBE-1772D36DC3B9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +135,8 @@ Global
 		{34439F5A-D35F-4E70-AB60-A99BC6C12E59} = {BDD51100-B9F0-44AD-8EB1-AFA8CB3D5304}
 		{CB180BB3-B302-4DFB-87FB-98E8E6F49F28} = {BDD51100-B9F0-44AD-8EB1-AFA8CB3D5304}
 		{B04AFF21-13AF-46BD-A1AA-E1BC969EF288} = {BDD51100-B9F0-44AD-8EB1-AFA8CB3D5304}
+		{10095043-B0B2-4550-A617-A216940AA533} = {BDD51100-B9F0-44AD-8EB1-AFA8CB3D5304}
+		{D1B9A0A7-F423-451E-9DBE-1772D36DC3B9} = {BDD51100-B9F0-44AD-8EB1-AFA8CB3D5304}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E3769946-3B9C-4BA1-8130-C58AF29109BD}
